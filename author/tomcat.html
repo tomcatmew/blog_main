@@ -30,7 +30,34 @@
         </address>
 <p>In <a href="https://tomcatmew.github.io/blog_main/category/review.html">Review</a>.</p>
 
-</footer><!-- /.post-info --><p>Following is a review of my favorite mechanical keyboard.</p>                </article>
+</footer><!-- /.post-info --><p>Following is a review of my favorite mechanical keyboard.</p>
+<h2>Comments</h2>
+<p>{% for comment in article.slug | get_comments %}</p>
+<div class="comment">
+    <p><strong>{{ comment.author }}</strong> said on {{ comment.date }}:</p>
+    <p>{{ comment.body }}</p>
+</div>
+<p>{% endfor %}</p>
+<form action="https://github.com/tomcatmew/blog_main/issues" method="POST">
+    <input type="hidden" name="title" value="Comment on {{ title }}">
+    <input type="hidden" name="labels" value="comment">
+
+    <p>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="body[name]" required>
+    </p>
+    <p>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="body[email]" required>
+    </p>
+    <p>
+        <label for="comment">Comment:</label>
+        <textarea id="comment" name="body[comment]" required></textarea>
+    </p>
+    <p>
+        <button type="submit">Submit Comment</button>
+    </p>
+</form>                </article>
             </aside><!-- /#featured -->
                 <section id="content" class="body">
                     <h1>Other articles</h1>
@@ -57,6 +84,33 @@
 </footer><!-- /.post-info -->                <p>mew
 mewmewmewmew
 mewmewmewmew</p>
+<h2>Comments</h2>
+<p>{% for comment in article.slug | get_comments %}</p>
+<div class="comment">
+    <p><strong>{{ comment.author }}</strong> said on {{ comment.date }}:</p>
+    <p>{{ comment.body }}</p>
+</div>
+<p>{% endfor %}</p>
+<form action="https://github.com/tomcatmew/blog_main/issues" method="POST">
+    <input type="hidden" name="title" value="Comment on {{ title }}">
+    <input type="hidden" name="labels" value="comment">
+
+    <p>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="body[name]" required>
+    </p>
+    <p>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="body[email]" required>
+    </p>
+    <p>
+        <label for="comment">Comment:</label>
+        <textarea id="comment" name="body[comment]" required></textarea>
+    </p>
+    <p>
+        <button type="submit">Submit Comment</button>
+    </p>
+</form>
                 <a class="readmore" href="https://tomcatmew.github.io/blog_main/my-second-review.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>

@@ -1,4 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>personal blog - Review</title><link href="https://tomcatmew.github.io/blog_main/" rel="alternate"></link><link href="https://tomcatmew.github.io/blog_main/feeds/review.atom.xml" rel="self"></link><id>https://tomcatmew.github.io/blog_main/</id><updated>2010-12-03T10:20:00+09:00</updated><entry><title>My First Review</title><link href="https://tomcatmew.github.io/blog_main/my-first-review.html" rel="alternate"></link><published>2010-12-03T10:20:00+09:00</published><updated>2010-12-03T10:20:00+09:00</updated><author><name>tomcat</name></author><id>tag:tomcatmew.github.io,2010-12-03:/blog_main/my-first-review.html</id><content type="html">&lt;p&gt;Following is a review of my favorite mechanical keyboard.&lt;/p&gt;</content><category term="Review"></category></entry><entry><title>My Second Review</title><link href="https://tomcatmew.github.io/blog_main/my-second-review.html" rel="alternate"></link><published>2010-12-03T10:20:00+09:00</published><updated>2010-12-03T10:20:00+09:00</updated><author><name>tomcat</name></author><id>tag:tomcatmew.github.io,2010-12-03:/blog_main/my-second-review.html</id><content type="html">&lt;p&gt;mew
+<feed xmlns="http://www.w3.org/2005/Atom"><title>personal blog - Review</title><link href="https://tomcatmew.github.io/blog_main/" rel="alternate"></link><link href="https://tomcatmew.github.io/blog_main/feeds/review.atom.xml" rel="self"></link><id>https://tomcatmew.github.io/blog_main/</id><updated>2010-12-03T10:20:00+09:00</updated><entry><title>My First Review</title><link href="https://tomcatmew.github.io/blog_main/my-first-review.html" rel="alternate"></link><published>2010-12-03T10:20:00+09:00</published><updated>2010-12-03T10:20:00+09:00</updated><author><name>tomcat</name></author><id>tag:tomcatmew.github.io,2010-12-03:/blog_main/my-first-review.html</id><content type="html">&lt;p&gt;Following is a review of my favorite mechanical keyboard.&lt;/p&gt;
+&lt;h2&gt;Comments&lt;/h2&gt;
+&lt;p&gt;{% for comment in article.slug | get_comments %}&lt;/p&gt;
+&lt;div class="comment"&gt;
+    &lt;p&gt;&lt;strong&gt;{{ comment.author }}&lt;/strong&gt; said on {{ comment.date }}:&lt;/p&gt;
+    &lt;p&gt;{{ comment.body }}&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;{% endfor %}&lt;/p&gt;
+&lt;form action="https://github.com/tomcatmew/blog_main/issues" method="POST"&gt;
+    &lt;input type="hidden" name="title" value="Comment on {{ title }}"&gt;
+    &lt;input type="hidden" name="labels" value="comment"&gt;
+
+    &lt;p&gt;
+        &lt;label for="name"&gt;Name:&lt;/label&gt;
+        &lt;input type="text" id="name" name="body[name]" required&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="email" name="body[email]" required&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;label for="comment"&gt;Comment:&lt;/label&gt;
+        &lt;textarea id="comment" name="body[comment]" required&gt;&lt;/textarea&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;button type="submit"&gt;Submit Comment&lt;/button&gt;
+    &lt;/p&gt;
+&lt;/form&gt;</content><category term="Review"></category></entry><entry><title>My Second Review</title><link href="https://tomcatmew.github.io/blog_main/my-second-review.html" rel="alternate"></link><published>2010-12-03T10:20:00+09:00</published><updated>2010-12-03T10:20:00+09:00</updated><author><name>tomcat</name></author><id>tag:tomcatmew.github.io,2010-12-03:/blog_main/my-second-review.html</id><content type="html">&lt;p&gt;mew
 mewmewmewmew
-mewmewmewmew&lt;/p&gt;</content><category term="Review"></category></entry></feed>
+mewmewmewmew&lt;/p&gt;
+&lt;h2&gt;Comments&lt;/h2&gt;
+&lt;p&gt;{% for comment in article.slug | get_comments %}&lt;/p&gt;
+&lt;div class="comment"&gt;
+    &lt;p&gt;&lt;strong&gt;{{ comment.author }}&lt;/strong&gt; said on {{ comment.date }}:&lt;/p&gt;
+    &lt;p&gt;{{ comment.body }}&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;{% endfor %}&lt;/p&gt;
+&lt;form action="https://github.com/tomcatmew/blog_main/issues" method="POST"&gt;
+    &lt;input type="hidden" name="title" value="Comment on {{ title }}"&gt;
+    &lt;input type="hidden" name="labels" value="comment"&gt;
+
+    &lt;p&gt;
+        &lt;label for="name"&gt;Name:&lt;/label&gt;
+        &lt;input type="text" id="name" name="body[name]" required&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="email" name="body[email]" required&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;label for="comment"&gt;Comment:&lt;/label&gt;
+        &lt;textarea id="comment" name="body[comment]" required&gt;&lt;/textarea&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;button type="submit"&gt;Submit Comment&lt;/button&gt;
+    &lt;/p&gt;
+&lt;/form&gt;</content><category term="Review"></category></entry></feed>
