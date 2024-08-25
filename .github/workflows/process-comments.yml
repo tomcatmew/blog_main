@@ -1,0 +1,33 @@
+﻿name: Process Comments
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  process-comment:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Extract comment from issue
+      run: |
+        ISSUE_TITLE="${{ github.event.issue.title }}"
+        ISSUE_BODY="${{ github.event.issue.body }}"
+        COMMENT_PATH="content/data/comments/${{ github.event.issue.number }}.md"
+
+        echo "Extracting comment..."
+        echo "title: $ISSUE_TITLE" > "$COMMENT_PATH"
+        echo "body: $ISSUE_BODY" >> "$COMMENT_PATH"
+        echo "author: ${{ github.event.issue.user.login }}" >> "$COMMENT_PATH"
+        echo "date: ${{ github.event.issue.created_at }}" >> "$COMMENT_PATH"
+
+    - name: Commit comment
+      run: |
+        git config --local user.name "GitHub Action"
+        git config --local user.email "actions@github.com"
+        git add content/data/comments/
+        git commit -m "Add comment #${{ github.event.issue.number }}"
+        git push origin ${{ github.ref }}
